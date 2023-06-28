@@ -12,11 +12,6 @@
 
 <div class="container">
     
-    <h2 class="champ-pick" id="underlined"> Your Champ: </h2>
-    <h2 class="champ-pick" id="champPickElement"></h2>
-
-    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
-
     <div class="selection">
         <p> Select Lane: </p>
         <select name="championRole" id="championRole">
@@ -28,6 +23,18 @@
             <option value="general" selected>GENERAL</option>
         </select>
     </div>
+    <div class="champ_num">
+        <p> Select number of champions: </p>
+        <select name="champ_num" id="champ_num">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <h2 class="champ-pick" id="champPickElement"></h2>
+
+    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
+
 
 
 <script src="app.js"></script>

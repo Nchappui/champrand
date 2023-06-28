@@ -1,5 +1,4 @@
 const showChamp = document.getElementById('champPickElement');
-const typeOfChamp = document.getElementById('underlined');
 
 const champs = [
     "Aatrox",
@@ -428,31 +427,26 @@ function getRandom(arr, n) {
 
 function randomChampion(){
     const role = document.getElementById('championRole').value
+    const number = document.getElementById('champ_num').value
 
     switch(role){
         case "top":
-            typeOfChamp.innerText = "Your Top Champ:"
-            showChamp.innerText = getRandom(topChamps,3);
+            showChamp.innerText = getRandom(topChamps,number);
             break;
         case "jungle":
-            typeOfChamp.innerText = "Your Jungle Champ:"
-            showChamp.innerText = getRandom(jungleChamps,3);
+            showChamp.innerText = getRandom(jungleChamps,number);
             break;
         case "mid":
-            typeOfChamp.innerText = "Your Mid Champ:"
-            showChamp.innerText = getRandom(midChamps,3);
+            showChamp.innerText = getRandom(midChamps,number);
             break;
         case "adc":
-            typeOfChamp.innerText = "Your ADC Champ:"
-            showChamp.innerText = getRandom(adcChamps,3);
+            showChamp.innerText = getRandom(adcChamps,number);
             break;
         case "support":
-            typeOfChamp.innerText = "Your Support Champ:"
-            showChamp.innerText = getRandom(supportChamps,3);
+            showChamp.innerText = getRandom(supportChamps,number);
             break;
         case "general":
-            typeOfChamp.innerText = "Your Random Champ:"
-            showChamp.innerText = getRandom(champs,3);
+            showChamp.innerText = getRandom(champs,number);
             break;
         default:
             console.log("Should not happen");
