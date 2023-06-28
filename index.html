@@ -1,42 +1,37 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Random champions</title>
 </head>
+
 <body>
 
-<div class="container">
-    
-    <div class="selection">
-        <p> Select Lane: </p>
+    <div class="container">
+
+
         <select name="championRole" id="championRole">
-            <option value="adc">ADC</option>
-            <option value="support">SUPPORT</option>
+            <option value="top">TOP</option>
             <option value="jungle">JUNGLE</option>
             <option value="mid">MID</option>
-            <option value="top">TOP</option>
+            <option value="adc">ADC</option>
+            <option value="support">SUPPORT</option>
             <option value="general" selected>GENERAL</option>
         </select>
-    </div>
-    <div class="champ_num">
-        <p> Select number of champions: </p>
+
         <select name="champ_num" id="champ_num">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
-    </div>
-    <h2 class="champ-pick" id="champPickElement"></h2>
+        <h2 class="champ-pick" id="champPickElement"></h2>
 
-    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
-
+        <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
 
 
-<script src="app.js"></script>
+
+        <script src="app.js"></script>
 </body>
+
 </html>
