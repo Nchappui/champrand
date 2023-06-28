@@ -1,36 +1,68 @@
-body {
-    background-color: lightgrey;
-}
-
-h1 {
-    color: navy;
-    margin-left: 20px;
-}
-
-h2 {
-    color: black;
-    margin-top: 30px;
-}
-
 select {
-    margin: auto;
-    display: inline;
+    display: inline-block;
     background-color: #04AA6D;
     border: none;
     color: white;
     padding: 10px 10px;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: auto;
     cursor: pointer;
 }
 
-button {
+body{
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
     margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button {
     background-color: #04AA6D;
     border: none;
     color: white;
     padding: 16px 32px;
     text-decoration: none;
     margin: 4px 2px;
+    cursor: pointer;
+}
+.gottenchamps{
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 5px;
+    
+}
+div.champ1{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+div.champ2{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+div.champ3{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.rerollbtn{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 3px 4px;
     cursor: pointer;
 }

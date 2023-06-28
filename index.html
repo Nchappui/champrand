@@ -8,8 +8,7 @@
 
 <body>
 
-    <div class="container">
-
+    <div class="selectgroup">
 
         <select name="championRole" id="championRole">
             <option value="top">TOP</option>
@@ -25,13 +24,31 @@
             <option value="2">2</option>
             <option value="3">3</option>
         </select>
-        <h2 class="champ-pick" id="champPickElement"></h2>
+
+    </div>
+
+    <div class="gottenchamps">
+        <div class =champ1>
+            <h2 class="champ-pick" id="champPickElement1"></h2>
+            <button class="rerollbtn" onclick="reroll1()"> Reroll</button>
+        </div>
+        <div class =champ2>
+            <h2 class="champ-pick" id="champPickElement2"></h2>
+            <button class="rerollbtn" onclick="reroll2()"> Reroll</button>
+        </div>
+        <div class =champ3>
+            <h2 class="champ-pick" id="champPickElement3"></h2>
+            <button class="rerollbtn" onclick="reroll3()"> Reroll</button>
+        </div>
+
+        
+
+    </div>
 
         <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
 
-
-
         <script src="app.js"></script>
+        
 </body>
 
 </html>
