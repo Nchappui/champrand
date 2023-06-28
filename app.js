@@ -476,8 +476,46 @@ function randomChampion() {
             break;
     }
 
+    updateButtons(number)
 }
-
+function updateButtons(number){
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    const button3 = document.getElementById('button3');
+    const champ1 = document.getElementById('champ1');
+    const champ2 = document.getElementById('champ2');
+    const champ3 = document.getElementById('champ3');
+    console.log(button1)
+    switch(number){
+        case '1' :
+            button1.hidden=false;
+            button2.hidden=true;
+            button3.hidden=true;
+            champ1.hidden=false;
+            champ2.hidden=true;
+            champ3.hidden=true;
+            break;
+        case '2' :
+            button1.hidden=false;
+            button2.hidden=false;
+            button3.hidden=true;
+            champ1.hidden=false;
+            champ2.hidden=false;
+            champ3.hidden=true;
+            break;
+        case '3':
+            button1.hidden=false;
+            button2.hidden=false;
+            button3.hidden=false;
+            champ1.hidden=false;
+            champ2.hidden=false;
+            champ3.hidden=false;
+            break;
+        default:
+            console.log("Should not happen");
+            break;
+    }
+}
 function reroll1(){
     const role = document.getElementById('championRole').value
     const showChamp1 = document.getElementById('champPickElement1');
