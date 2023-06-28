@@ -7,25 +7,8 @@
 </head>
 
 <body>
-
-    <div class="selectgroup">
-
-        <select name="championRole" id="championRole">
-            <option value="top">TOP</option>
-            <option value="jungle">JUNGLE</option>
-            <option value="mid">MID</option>
-            <option value="adc">ADC</option>
-            <option value="support">SUPPORT</option>
-            <option value="general" selected>GENERAL</option>
-        </select>
-
-        <select name="champ_num" id="champ_num">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-    </div>
+    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
+    
 
     <div class="gottenchamps">
         <div class =champ1 id="champ1" hidden>
@@ -46,7 +29,24 @@
 
     </div>
 
-        <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
+    <div class="selectgroup">
+
+        <select name="championRole" id="championRole">
+            <option value="top">TOP</option>
+            <option value="jungle">JUNGLE</option>
+            <option value="mid">MID</option>
+            <option value="adc">ADC</option>
+            <option value="support">SUPPORT</option>
+            <option value="general" selected>GENERAL</option>
+        </select>
+
+        <select name="champ_num" id="champ_num">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+    </div>
 
         <script src="app.js"></script>
         
