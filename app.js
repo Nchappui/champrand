@@ -412,44 +412,51 @@ const topChamps = [
     "Zac"
 ];
 
-function randomChampion(){
-    // generating random number for all of the League champions
-    const randomPickGeneral = Math.floor(Math.random() * champs.length);
-    // generating random number for ADC champions.
-    const randomPickADC = Math.floor(Math.random() * adcChamps.length);
-    // generating random number for Support champions.
-    const randomPickSupport = Math.floor(Math.random() * supportChamps.length);
-    // generating random number for Mid champions.
-    const randomPickMid = Math.floor(Math.random() * midChamps.length);
-    // generating random number for Jungle champions.
-    const randomPickJungle = Math.floor(Math.random() * jungleChamps.length);
-    // generating random number for Top champions.
-    const randomPickTop = Math.floor(Math.random() * topChamps.length);
+function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
 
-    // testing the if selected in javascript
-    if(document.getElementById('championRole').value == "adc") {
-        typeOfChamp.innerText = "Your ADC Champ:"
-        showChamp.innerText = adcChamps[randomPickADC];
-    }
-    if(document.getElementById('championRole').value == "general") {
-        typeOfChamp.innerText = "Your Random Champ:"
-        showChamp.innerText = champs[randomPickGeneral];
-    }
-    if(document.getElementById('championRole').value == "support") {
-        typeOfChamp.innerText = "Your Support Champ:"
-        showChamp.innerText = supportChamps[randomPickSupport];
-    }
-    if(document.getElementById('championRole').value == "mid") {
-        typeOfChamp.innerText = "Your Mid Champ:"
-        showChamp.innerText = midChamps[randomPickMid];
-    }
-    if(document.getElementById('championRole').value == "jungle") {
-        typeOfChamp.innerText = "Your Jungle Champ:"
-        showChamp.innerText = jungleChamps[randomPickJungle];
-    }
-    if(document.getElementById('championRole').value == "top") {
-        typeOfChamp.innerText = "Your Top Champ:"
-        showChamp.innerText = topChamps[randomPickTop];
+function randomChampion(){
+    const role = document.getElementById('championRole').value
+
+    switch(role){
+        case "top":
+            typeOfChamp.innerText = "Your Top Champ:"
+            showChamp.innerText = getRandom(topChamps,3);
+            break;
+        case "jungle":
+            typeOfChamp.innerText = "Your Jungle Champ:"
+            showChamp.innerText = getRandom(jungleChamps,3);
+            break;
+        case "mid":
+            typeOfChamp.innerText = "Your Mid Champ:"
+            showChamp.innerText = getRandom(midChamps,3);
+            break;
+        case "adc":
+            typeOfChamp.innerText = "Your ADC Champ:"
+            showChamp.innerText = getRandom(adcChamps,3);
+            break;
+        case "support":
+            typeOfChamp.innerText = "Your Support Champ:"
+            showChamp.innerText = getRandom(supportChamps,3);
+            break;
+        case "general":
+            typeOfChamp.innerText = "Your Random Champ:"
+            showChamp.innerText = getRandom(champs,3);
+            break;
+        default:
+            console.log("Should not happen");
+            break;
     }
 
 }
