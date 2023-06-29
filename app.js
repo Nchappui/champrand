@@ -479,28 +479,6 @@ function randomChampion(role) {
             console.log("Should not happen");
             break;
     }
-    /*
-    switch(number){
-        case '1' :
-            showChamp1.innerText = temp[0];
-            showChamp2.innerText = "";
-            showChamp3.innerText = "";
-            break;
-        case '2' :
-            showChamp1.innerText = temp[0];
-            showChamp2.innerText = temp[1];
-            showChamp3.innerText = "";
-            break;
-        case '3':
-            showChamp1.innerText = temp[0];
-            showChamp2.innerText = temp[1];
-            showChamp3.innerText = temp[2];
-            break;
-        default:
-            console.log("Should not happen");
-            break;
-    }
-*/
 }
 function updateButtons(role){
     var button1;
@@ -561,22 +539,27 @@ function updateButtons(role){
     champ2.hidden=false;
     champ3.hidden=false;
 }
-function reroll(role, elemid){
+function reroll(role, elemid, champNum){
     switch (role) {
         case 'top':
             newchamp = getRandom(topChamps, 1);
+            selectTop[champNum]=newchamp
             break;
         case 'jungle':
             newchamp = getRandom(jungleChamps, 1);
+            selectJungle[champNum]=newchamp
             break;
         case 'mid':
             newchamp = getRandom(midChamps, 1);
+            selectMid[champNum]=newchamp
             break;
         case 'adc':
             newchamp = getRandom(adcChamps, 1);
+            selectAdc[champNum]=newchamp
             break;
         case 'support':
             newchamp = getRandom(supportChamps, 1);
+            selectSupport[champNum]=newchamp
             break;
         case 'general':
             newchamp = getRandom(champs, 1);
@@ -587,3 +570,20 @@ function reroll(role, elemid){
     }
     elemid.innerText=newchamp;
 }
+
+function copyCompo(){
+    var text = "Top : " +  String(selectTop) +"\n" +
+    "Jgl : " +  String(selectJungle) +"\n" +
+    "Mid : " +  String(selectMid) +"\n" +
+    "Adc : " +  String(selectAdc) +"\n" +
+    "Supp : " +  String(selectSupport);
+
+    navigator.clipboard.writeText(text);
+
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied! ";
+}
+function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+  }

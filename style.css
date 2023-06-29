@@ -18,7 +18,7 @@ body{
     position: absolute;
     zoom: 120%;
 }
-button {
+.btn {
     background-color: #04AA6D;
     border: none;
     color: white;
@@ -80,3 +80,42 @@ div.champ{
     border: 2px solid green;
     border-radius: 5px;
 }
+
+.tooltip {
+    position: relative;
+    display:grid;
+    width: 100px;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
