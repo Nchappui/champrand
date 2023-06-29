@@ -452,13 +452,25 @@ function randomChampion(role) {
             updateButtons('jungle')
             break;
         case 'mid':
-            temp = getRandom(midChamps, 3);
+            selectMid = getRandom(midChamps, 3);
+            document.getElementById('midChamp1').innerText = selectMid[0]
+            document.getElementById('midChamp2').innerText = selectMid[1]
+            document.getElementById('midChamp3').innerText = selectMid[2]
+            updateButtons('mid')
             break;
         case 'adc':
-            temp = getRandom(adcChamps, 3);
+            selectAdc = getRandom(adcChamps, 3);
+            document.getElementById('adcChamp1').innerText = selectAdc[0]
+            document.getElementById('adcChamp2').innerText = selectAdc[1]
+            document.getElementById('adcChamp3').innerText = selectAdc[2]
+            updateButtons('adc')
             break;
         case 'support':
-            temp = getRandom(supportChamps, 3);
+            selectSupport = getRandom(supportChamps, 3);
+            document.getElementById('supportChamp1').innerText = selectSupport[0]
+            document.getElementById('supportChamp2').innerText = selectSupport[1]
+            document.getElementById('supportChamp3').innerText = selectSupport[2]
+            updateButtons('support')
             break;
         case 'general':
             temp = getRandom(champs, 3);
@@ -515,28 +527,28 @@ function updateButtons(role){
             var champ3 = document.getElementById('jungle3');
             break;
         case 'mid' :
-            var button1 = document.getElementById('topButton1');
-            var button2 = document.getElementById('topButton2');
-            var button3 = document.getElementById('topButton3');
-            var champ1 = document.getElementById('top1');
-            var champ2 = document.getElementById('top2');
-            var champ3 = document.getElementById('top3');
+            var button1 = document.getElementById('midButton1');
+            var button2 = document.getElementById('midButton2');
+            var button3 = document.getElementById('midButton3');
+            var champ1 = document.getElementById('mid1');
+            var champ2 = document.getElementById('mid2');
+            var champ3 = document.getElementById('mid3');
             break;
         case 'adc' :
-            var button1 = document.getElementById('topButton1');
-            var button2 = document.getElementById('topButton2');
-            var button3 = document.getElementById('topButton3');
-            var champ1 = document.getElementById('top1');
-            var champ2 = document.getElementById('top2');
-            var champ3 = document.getElementById('top3');
+            var button1 = document.getElementById('adcButton1');
+            var button2 = document.getElementById('adcButton2');
+            var button3 = document.getElementById('adcButton3');
+            var champ1 = document.getElementById('adc1');
+            var champ2 = document.getElementById('adc2');
+            var champ3 = document.getElementById('adc3');
             break;
         case 'support' :
-            var button1 = document.getElementById('topButton1');
-            var button2 = document.getElementById('topButton2');
-            var button3 = document.getElementById('topButton3');
-            var champ1 = document.getElementById('top1');
-            var champ2 = document.getElementById('top2');
-            var champ3 = document.getElementById('top3');
+            var button1 = document.getElementById('supportButton1');
+            var button2 = document.getElementById('supportButton2');
+            var button3 = document.getElementById('supportButton3');
+            var champ1 = document.getElementById('support1');
+            var champ2 = document.getElementById('support2');
+            var champ3 = document.getElementById('support3');
             break;
         default:
             console.log("Should not happen");

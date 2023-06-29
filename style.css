@@ -16,7 +16,7 @@ body{
     text-align: center;
     margin: auto;
     position: absolute;
-    zoom: 150%;
+    zoom: 120%;
 }
 button {
     background-color: #04AA6D;
@@ -57,6 +57,24 @@ div.champ{
     border-radius: 5px;
 }
 .jungle{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.mid{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.support{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.adc{
     display: flex;
     flex-direction: row;
     border: 2px solid green;
