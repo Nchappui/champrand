@@ -425,13 +425,16 @@ function getRandom(arr, n) {
 
 function randomChampion(role) {
     var temp;
-    const showChamp1 = document.getElementById('champPickElement1');
-    const showChamp2 = document.getElementById('champPickElement2');
-    const showChamp3 = document.getElementById('champPickElement3');
+    var showChamp1
+    var showChamp2
+    var showChamp3
 
     switch (role) {
         case top:
             temp = getRandom(topChamps, 3);
+            showChamp1 = document.getElementById('topChamp1');
+            showChamp2 = document.getElementById('topChamp2');
+            showChamp3 = document.getElementById('topChamp3');
             break;
         case jungle:
             temp = getRandom(jungleChamps, 3);
@@ -486,7 +489,6 @@ function updateButtons(number){
     const champ1 = document.getElementById('champ1');
     const champ2 = document.getElementById('champ2');
     const champ3 = document.getElementById('champ3');
-    console.log(button1)
     switch(number){
         case 1 :
             button1.hidden=false;
