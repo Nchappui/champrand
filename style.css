@@ -37,8 +37,8 @@ div.champ{
     float: left;
     padding-left: 20px;
     padding-right: 20px;
-    border: 2px solid green;
-    border-radius: 5px;
+    margin-right: 10px;
+    min-width: 200px;
 }
 .rerollbtn{
     background-color: #04AA6D;
@@ -53,32 +53,22 @@ div.champ{
 .top{
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    border-radius: 5px;
 }
 .jungle{
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    border-radius: 5px;
 }
 .mid{
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    border-radius: 5px;
 }
 .support{
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    border-radius: 5px;
 }
 .adc{
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    border-radius: 5px;
 }
 
 .tooltip {
