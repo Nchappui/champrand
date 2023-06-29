@@ -423,38 +423,36 @@ function getRandom(arr, n) {
     return result;
 }
 
-function randomChampion() {
+function randomChampion(role) {
     var temp;
-    const role = document.getElementById('championRole').value
-    const number = document.getElementById('champ_num').value
     const showChamp1 = document.getElementById('champPickElement1');
     const showChamp2 = document.getElementById('champPickElement2');
     const showChamp3 = document.getElementById('champPickElement3');
 
     switch (role) {
-        case "top":
-            temp = getRandom(topChamps, number);
+        case top:
+            temp = getRandom(topChamps, 3);
             break;
-        case "jungle":
-            temp = getRandom(jungleChamps, number);
+        case jungle:
+            temp = getRandom(jungleChamps, 3);
             break;
-        case "mid":
-            temp = getRandom(midChamps, number);
+        case mid:
+            temp = getRandom(midChamps, 3);
             break;
-        case "adc":
-            temp = getRandom(adcChamps, number);
+        case adc:
+            temp = getRandom(adcChamps, 3);
             break;
-        case "support":
-            temp = getRandom(supportChamps, number);
+        case support:
+            temp = getRandom(supportChamps, 3);
             break;
-        case "general":
-            temp = getRandom(champs, number);
+        case general:
+            temp = getRandom(champs, 3);
             break;
         default:
             console.log("Should not happen");
             break;
     }
-
+    /*
     switch(number){
         case '1' :
             showChamp1.innerText = temp[0];
@@ -475,8 +473,11 @@ function randomChampion() {
             console.log("Should not happen");
             break;
     }
-
-    updateButtons(number)
+*/
+    showChamp1.innerText = temp[0];
+    showChamp2.innerText = temp[1];
+    showChamp3.innerText = temp[2];
+    updateButtons(3)
 }
 function updateButtons(number){
     const button1 = document.getElementById('button1');
@@ -487,7 +488,7 @@ function updateButtons(number){
     const champ3 = document.getElementById('champ3');
     console.log(button1)
     switch(number){
-        case '1' :
+        case 1 :
             button1.hidden=false;
             button2.hidden=true;
             button3.hidden=true;
@@ -495,7 +496,7 @@ function updateButtons(number){
             champ2.hidden=true;
             champ3.hidden=true;
             break;
-        case '2' :
+        case 2 :
             button1.hidden=false;
             button2.hidden=false;
             button3.hidden=true;
@@ -503,7 +504,7 @@ function updateButtons(number){
             champ2.hidden=false;
             champ3.hidden=true;
             break;
-        case '3':
+        case 3:
             button1.hidden=false;
             button2.hidden=false;
             button3.hidden=false;
@@ -516,87 +517,29 @@ function updateButtons(number){
             break;
     }
 }
-function reroll1(){
-    const role = document.getElementById('championRole').value
-    const showChamp1 = document.getElementById('champPickElement1');
+function reroll(role, elemid){
     switch (role) {
-        case "top":
+        case top:
             newchamp = getRandom(topChamps, 1);
             break;
-        case "jungle":
+        case jungle:
             newchamp = getRandom(jungleChamps, 1);
             break;
-        case "mid":
+        case mid:
             newchamp = getRandom(midChamps, 1);
             break;
-        case "adc":
+        case adc:
             newchamp = getRandom(adcChamps, 1);
             break;
-        case "support":
+        case support:
             newchamp = getRandom(supportChamps, 1);
             break;
-        case "general":
+        case general:
             newchamp = getRandom(champs, 1);
             break;
         default:
             console.log("Should not happen");
             break;
     }
-    showChamp1.innerText=newchamp;
-}
-function reroll2(){
-    const role = document.getElementById('championRole').value
-    const showChamp2 = document.getElementById('champPickElement2');
-    switch (role) {
-        case "top":
-            newchamp = getRandom(topChamps, 1);
-            break;
-        case "jungle":
-            newchamp = getRandom(jungleChamps, 1);
-            break;
-        case "mid":
-            newchamp = getRandom(midChamps, 1);
-            break;
-        case "adc":
-            newchamp = getRandom(adcChamps, 1);
-            break;
-        case "support":
-            newchamp = getRandom(supportChamps, 1);
-            break;
-        case "general":
-            newchamp = getRandom(champs, 1);
-            break;
-        default:
-            console.log("Should not happen");
-            break;
-    }
-    showChamp2.innerText=newchamp;
-}
-function reroll3(){
-    const role = document.getElementById('championRole').value
-    const showChamp3 = document.getElementById('champPickElement3');
-    switch (role) {
-        case "top":
-            newchamp = getRandom(topChamps, 1);
-            break;
-        case "jungle":
-            newchamp = getRandom(jungleChamps, 1);
-            break;
-        case "mid":
-            newchamp = getRandom(midChamps, 1);
-            break;
-        case "adc":
-            newchamp = getRandom(adcChamps, 1);
-            break;
-        case "support":
-            newchamp = getRandom(supportChamps, 1);
-            break;
-        case "general":
-            newchamp = getRandom(champs, 1);
-            break;
-        default:
-            console.log("Should not happen");
-            break;
-    }
-    showChamp3.innerText=newchamp;
+    elemid.innerText=newchamp;
 }

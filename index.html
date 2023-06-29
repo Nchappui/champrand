@@ -5,52 +5,52 @@
     <link rel="stylesheet" href="style.css">
     <title>Random champions</title>
 </head>
-<p class="cachee" id="pournono"></p>
 
 <body>
-    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
-    
+    <div class="top">
+        <button class="btn" onclick="randomChampion(top)"> RANDOMIZE </button>
+        <div class="gottenchamps">
+            <div class=champ1 id="champ1" hidden>
+                <h2 class="champ-pick" id="champPickElement1"></h2>
+                <button class="rerollbtn" onclick="reroll(top, champPickElement1)" hidden="hidden" , id=button1> Reroll</button>
 
-    <div class="gottenchamps">
-        <div class =champ1 id="champ1" hidden>
-            <h2 class="champ-pick" id="champPickElement1"></h2>
-            <button class="rerollbtn" onclick="reroll1()" hidden = "hidden", id = button1> Reroll</button>
-            
-        </div>
-        <div class =champ2 id="champ2" hidden>
-            <h2 class="champ-pick" id="champPickElement2"></h2>
-            <button class="rerollbtn" onclick="reroll2()" hidden = "hidden", id = button2> Reroll</button>
-        </div>
-        <div class =champ3 id="champ3" hidden>
-            <h2 class="champ-pick" id="champPickElement3"></h2>
-            <button class="rerollbtn" onclick="reroll3()" hidden = "hidden", id = button3> Reroll</button>
-        </div>
+            </div>
+            <div class=champ2 id="champ2" hidden>
+                <h2 class="champ-pick" id="champPickElement2"></h2>
+                <button class="rerollbtn" onclick="reroll(top, champPickElement2)" hidden="hidden" , id=button2> Reroll</button>
+            </div>
+            <div class=champ3 id="champ3" hidden>
+                <h2 class="champ-pick" id="champPickElement3"></h2>
+                <button class="rerollbtn" onclick="reroll(top, champPickElement3)" hidden="hidden" , id=button3> Reroll</button>
+            </div>
+
 
         
+        </div>
+        <!--
+        <div class="selectgroup">
 
+            <select name="championRole" id="championRole">
+                <option value="top">TOP</option>
+                <option value="jungle">JUNGLE</option>
+                <option value="mid">MID</option>
+                <option value="adc">ADC</option>
+                <option value="support">SUPPORT</option>
+                <option value="general" selected>GENERAL</option>
+            </select>
+
+            <select name="champ_num" id="champ_num">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+        </div>
+        -->
     </div>
 
-    <div class="selectgroup">
+    <script src="app.js"></script>
 
-        <select name="championRole" id="championRole">
-            <option value="top">TOP</option>
-            <option value="jungle">JUNGLE</option>
-            <option value="mid">MID</option>
-            <option value="adc">ADC</option>
-            <option value="support">SUPPORT</option>
-            <option value="general" selected>GENERAL</option>
-        </select>
-
-        <select name="champ_num" id="champ_num">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-    </div>
-
-        <script src="app.js"></script>
-        
 </body>
 
 </html>
