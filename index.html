@@ -8,45 +8,38 @@
 
 <body>
     <div class="top">
-        <button class="btn" onclick="randomChampion(top)"> Roll TOP </button>
+        <button class="btn" onclick="randomChampion('top')"> Roll TOP </button>
         <div class="gottenchamps">
-            <div class=champ1 id="champ1" hidden>
+            <div class=champ id="top1" hidden>
                 <h2 class="champ-pick" id="topChamp1"></h2>
-                <button class="rerollbtn" onclick="reroll(top, topChamp1)" hidden="hidden" , id=button1> Reroll</button>
-
+                <button class="rerollbtn" onclick="reroll('top', topChamp1)" hidden="hidden" , id=topButton1> Reroll</button>
             </div>
-            <div class=champ2 id="champ2" hidden>
+            <div class=champ id="top2" hidden>
                 <h2 class="champ-pick" id="topChamp2"></h2>
-                <button class="rerollbtn" onclick="reroll(top, topChamp2)" hidden="hidden" , id=button2> Reroll</button>
+                <button class="rerollbtn" onclick="reroll('top', topChamp2)" hidden="hidden" , id=topButton2> Reroll</button>
             </div>
-            <div class=champ3 id="champ3" hidden>
+            <div class=champ id="top3" hidden>
                 <h2 class="champ-pick" id="topChamp3"></h2>
-                <button class="rerollbtn" onclick="reroll(top, topChamp3)" hidden="hidden" , id=button3> Reroll</button>
+                <button class="rerollbtn" onclick="reroll('top', topChamp3)" hidden="hidden" , id=topButton3> Reroll</button>
             </div>
-
-
-        
         </div>
-        <!--
-        <div class="selectgroup">
-
-            <select name="championRole" id="championRole">
-                <option value="top">TOP</option>
-                <option value="jungle">JUNGLE</option>
-                <option value="mid">MID</option>
-                <option value="adc">ADC</option>
-                <option value="support">SUPPORT</option>
-                <option value="general" selected>GENERAL</option>
-            </select>
-
-            <select name="champ_num" id="champ_num">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-
+    </div>
+    <div class="jungle">
+        <button class="btn" onclick="randomChampion('jungle')"> Roll JUNGLE </button>
+        <div class="gottenchamps">
+            <div class=champ id="jungle1" hidden>
+                <h2 class="champ-pick" id="jungleChamp1"></h2>
+                <button class="rerollbtn" onclick="reroll('jungle', jungleChamp1)" hidden="hidden" , id=jungleButton1> Reroll</button>
+            </div>
+            <div class=champ id="jungle2" hidden>
+                <h2 class="champ-pick" id="jungleChamp2"></h2>
+                <button class="rerollbtn" onclick="reroll('jungle', jungleChamp2)" hidden="hidden" , id=jungleButton2> Reroll</button>
+            </div>
+            <div class=champ id="jungle3" hidden>
+                <h2 class="champ-pick" id="jungleChamp3"></h2>
+                <button class="rerollbtn" onclick="reroll('jungle', jungleChamp3)" hidden="hidden" , id=jungleButton3> Reroll</button>
+            </div>
         </div>
-        -->
     </div>
 
     <script src="app.js"></script>

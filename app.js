@@ -409,6 +409,13 @@ const topChamps = [
     "Zac"
 ];
 
+var selectAll = ["","",""];
+var selectTop = ["","",""];
+var selectJungle = ["","",""];
+var selectMid = ["","",""];
+var selectAdc = ["","",""];
+var selectSupport = ["","",""];
+
 function getRandom(arr, n) {
     var result = new Array(n),
         len = arr.length,
@@ -424,31 +431,36 @@ function getRandom(arr, n) {
 }
 
 function randomChampion(role) {
-    var temp;
     var showChamp1
     var showChamp2
     var showChamp3
+    console.log(role)
 
     switch (role) {
-        case top:
-            temp = getRandom(topChamps, 3);
-            showChamp1 = document.getElementById('topChamp1');
-            showChamp2 = document.getElementById('topChamp2');
-            showChamp3 = document.getElementById('topChamp3');
+        case 'top':
+            selectTop = getRandom(topChamps, 3);
+            document.getElementById('topChamp1').innerText = selectTop[0]
+            document.getElementById('topChamp2').innerText = selectTop[1]
+            document.getElementById('topChamp3').innerText = selectTop[2]
+            updateButtons('top')
             break;
-        case jungle:
-            temp = getRandom(jungleChamps, 3);
+        case 'jungle':
+            selectJungle = getRandom(jungleChamps, 3);
+            document.getElementById('jungleChamp1').innerText = selectJungle[0]
+            document.getElementById('jungleChamp2').innerText = selectJungle[1]
+            document.getElementById('jungleChamp3').innerText = selectJungle[2]
+            updateButtons('jungle')
             break;
-        case mid:
+        case 'mid':
             temp = getRandom(midChamps, 3);
             break;
-        case adc:
+        case 'adc':
             temp = getRandom(adcChamps, 3);
             break;
-        case support:
+        case 'support':
             temp = getRandom(supportChamps, 3);
             break;
-        case general:
+        case 'general':
             temp = getRandom(champs, 3);
             break;
         default:
@@ -477,66 +489,84 @@ function randomChampion(role) {
             break;
     }
 */
-    showChamp1.innerText = temp[0];
-    showChamp2.innerText = temp[1];
-    showChamp3.innerText = temp[2];
-    updateButtons(3)
 }
-function updateButtons(number){
-    const button1 = document.getElementById('button1');
-    const button2 = document.getElementById('button2');
-    const button3 = document.getElementById('button3');
-    const champ1 = document.getElementById('champ1');
-    const champ2 = document.getElementById('champ2');
-    const champ3 = document.getElementById('champ3');
-    switch(number){
-        case 1 :
-            button1.hidden=false;
-            button2.hidden=true;
-            button3.hidden=true;
-            champ1.hidden=false;
-            champ2.hidden=true;
-            champ3.hidden=true;
+function updateButtons(role){
+    var button1;
+    var button2;
+    var button3;
+    var champ1;
+    var champ2;
+    var champ3;
+    switch(role){
+        case 'top' :
+            var button1 = document.getElementById('topButton1');
+            var button2 = document.getElementById('topButton2');
+            var button3 = document.getElementById('topButton3');
+            var champ1 = document.getElementById('top1');
+            var champ2 = document.getElementById('top2');
+            var champ3 = document.getElementById('top3');
             break;
-        case 2 :
-            button1.hidden=false;
-            button2.hidden=false;
-            button3.hidden=true;
-            champ1.hidden=false;
-            champ2.hidden=false;
-            champ3.hidden=true;
+        case 'jungle' :
+            var button1 = document.getElementById('jungleButton1');
+            var button2 = document.getElementById('jungleButton2');
+            var button3 = document.getElementById('jungleButton3');
+            var champ1 = document.getElementById('jungle1');
+            var champ2 = document.getElementById('jungle2');
+            var champ3 = document.getElementById('jungle3');
             break;
-        case 3:
-            button1.hidden=false;
-            button2.hidden=false;
-            button3.hidden=false;
-            champ1.hidden=false;
-            champ2.hidden=false;
-            champ3.hidden=false;
+        case 'mid' :
+            var button1 = document.getElementById('topButton1');
+            var button2 = document.getElementById('topButton2');
+            var button3 = document.getElementById('topButton3');
+            var champ1 = document.getElementById('top1');
+            var champ2 = document.getElementById('top2');
+            var champ3 = document.getElementById('top3');
+            break;
+        case 'adc' :
+            var button1 = document.getElementById('topButton1');
+            var button2 = document.getElementById('topButton2');
+            var button3 = document.getElementById('topButton3');
+            var champ1 = document.getElementById('top1');
+            var champ2 = document.getElementById('top2');
+            var champ3 = document.getElementById('top3');
+            break;
+        case 'support' :
+            var button1 = document.getElementById('topButton1');
+            var button2 = document.getElementById('topButton2');
+            var button3 = document.getElementById('topButton3');
+            var champ1 = document.getElementById('top1');
+            var champ2 = document.getElementById('top2');
+            var champ3 = document.getElementById('top3');
             break;
         default:
             console.log("Should not happen");
             break;
     }
+    button1.hidden=false;
+    button2.hidden=false;
+    button3.hidden=false;
+    champ1.hidden=false;
+    champ2.hidden=false;
+    champ3.hidden=false;
 }
 function reroll(role, elemid){
     switch (role) {
-        case top:
+        case 'top':
             newchamp = getRandom(topChamps, 1);
             break;
-        case jungle:
+        case 'jungle':
             newchamp = getRandom(jungleChamps, 1);
             break;
-        case mid:
+        case 'mid':
             newchamp = getRandom(midChamps, 1);
             break;
-        case adc:
+        case 'adc':
             newchamp = getRandom(adcChamps, 1);
             break;
-        case support:
+        case 'support':
             newchamp = getRandom(supportChamps, 1);
             break;
-        case general:
+        case 'general':
             newchamp = getRandom(champs, 1);
             break;
         default:
