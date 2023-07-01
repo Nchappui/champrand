@@ -180,7 +180,6 @@ const adcChamps = [
     "Miss Fortune",
     "Nilah",
     "Samira",
-    "Senna",
     "Seraphine",
     "Sivir",
     "Tristana",
