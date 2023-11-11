@@ -397,7 +397,6 @@ const topChamps = [
     "Vayne",
     "Vladimir",
     "Volibear",
-    "Wukong",
     "Yone",
     "Yorick",
     "Zac"
