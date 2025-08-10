@@ -1,71 +1,340 @@
-select {
-    display: inline-block;
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-decoration: none;
-    margin: auto;
-    cursor: pointer;
+/* Modern dark theme */
+:root {
+  --bg: #0f1115;
+  --bg-alt: #181b21;
+  --panel: #1f242c;
+  --panel-alt: #262d38;
+  --text: #e8edf2;
+  --text-dim: #9aa4b1;
+  --accent: #4b8bff;
+  --accent-glow: 180 100% 60%;
+  --danger: #ff4d61;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 4px 12px -2px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-focus: 0 0 0 2px rgba(255, 255, 255, 0.06),
+    0 0 0 4px rgba(75, 139, 255, 0.35);
+  font-family: "Kanit", system-ui, Arial, sans-serif;
 }
 
-body{
-    background-color: rgb(25, 27, 25);
-    padding: 10px;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    zoom: 150%;
+* {
+  box-sizing: border-box;
 }
 
-button {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
+html,
+body {
+  height: 100%;
 }
-.gottenchamps{
-    background-color: rgb(25, 27, 25);
-    padding: 10px;
-    
+body {
+  margin: 0;
+  background: radial-gradient(circle at 30% 20%, #182031 0%, #0f1115 70%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
-div.champ1{
-    background-color: lightgrey;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: inline-block;
-    border: 2px solid green;
-    border-radius: 5px;
+
+/* Empty state: center the big button */
+body.empty-state .team-grid {
+  display: none;
 }
-div.champ2{
-    background-color: lightgrey;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: inline-block;
-    border: 2px solid green;
-    border-radius: 5px;
+body.empty-state .team-header {
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 6vh 0 10vh;
 }
-div.champ3{
-    background-color: lightgrey;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: inline-block;
-    border: 2px solid green;
-    border-radius: 5px;
+body.empty-state .team-header h2 {
+  display: none;
 }
-.rerollbtn{
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    text-decoration: none;
-    margin: 3px 4px;
-    cursor: pointer;
+body.empty-state .team-actions .primary-btn.big {
+  transform: scale(1.15);
+}
+body.empty-state .team-actions .primary-btn.big:hover {
+  transform: scale(1.18) translateY(-4px);
+}
+
+.app-shell {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem clamp(1rem, 2.5vw, 3rem) 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 1px;
+  background: linear-gradient(92deg, #79a8ff, #af6bff 55%, #ffb86b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tagline {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+/* Controls */
+/* (Single-role controls removed) */
+
+.primary-btn {
+  background: linear-gradient(135deg, #4b8bff, #8752ff 60%, #ff8a42);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.95rem 2.2rem;
+  border-radius: var(--radius-lg);
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: 0.35s transform, 0.35s filter;
+}
+.primary-btn:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0) 40%
+  );
+  mix-blend-mode: overlay;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+.primary-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+.primary-btn.small {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.78rem;
+  border-radius: var(--radius-sm);
+}
+.primary-btn.small.alt {
+  background: linear-gradient(135deg, #375776, #4b6580);
+}
+.primary-btn.big {
+  font-size: 1.25rem;
+  padding: 1.4rem 3.2rem;
+  border-radius: 46px;
+  letter-spacing: 1px;
+  box-shadow: 0 12px 34px -8px rgba(0, 0, 0, 0.7), 0 4px 10px rgba(0, 0, 0, 0.5),
+    0 0 0 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+.primary-btn.big:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.12);
+  animation: pulseGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.07);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+}
+
+/* (Old single champ grid removed) */
+
+/* Footer */
+.app-footer {
+  margin-top: auto;
+  text-align: center;
+  color: #5c6774;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar (desktop only) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #12161c;
+}
+::-webkit-scrollbar-thumb {
+  background: #27313c;
+  border-radius: 20px;
+  border: 3px solid #12161c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #324252;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+
+/* Team section */
+.team-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.team-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+.team-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+}
+.role-column {
+  position: relative;
+  background: linear-gradient(150deg, #242d38, #1b222a);
+  border: 1px solid #2e3946;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.55rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: var(--shadow-soft);
+  animation: fadeIn 0.45s ease;
+}
+.role-label {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  background: #2d3947;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.75px;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  color: #b2c0cc;
+  pointer-events: none;
+}
+.mini-picks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.mini-card {
+  position: relative;
+  background: radial-gradient(
+    circle at 75% 20%,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.25)
+  );
+  border: 1px solid #3a4957;
+  border-radius: var(--radius-sm);
+  display: grid;
+  grid-template-columns: 72px 1fr 54px; /* add space for reroll */
+  gap: 0.75rem;
+  padding: 0.7rem 0.75rem;
+  align-items: center;
+  min-height: 90px;
+  overflow: hidden;
+}
+.mini-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: saturate(1.15) contrast(1.05);
+  transition: 0.45s transform;
+}
+.mini-card:hover img {
+  transform: scale(1.08);
+}
+.mini-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.mini-info h4 {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.mini-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.mini-btn {
+  background: #35506a;
+  border: 1px solid #47627b;
+  color: #e6eef4;
+  font-size: 0.65rem;
+  padding: 0.55rem 0.7rem 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
+  transition: 0.35s background, 0.35s transform, 0.35s filter;
+}
+.mini-btn:hover {
+  background: #406482;
+  filter: brightness(1.05);
+}
+.mini-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.92);
+}
+.mini-btn.danger {
+  border-color: #5a2f38;
+  background: #45242b;
+  color: #ff909d;
+}
+.mini-btn.danger:hover {
+  background: #5a2f38;
+  color: #fff;
+}
+.role-column footer {
+  margin-top: 0.2rem;
+}
+.role-column footer button {
+  width: 100%;
 }

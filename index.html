@@ -1,55 +1,35 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Champion Randomizer</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <header class="app-header">
+                <h1>League Champion Randomizer</h1>
+                <p class="tagline">Choisis un rôle, un nombre, et découvre de nouveaux picks (desktop only).</p>
+            </header>
 
-<head>
-    <link rel="stylesheet" href="style.css">
-    <title>Random champions</title>
-</head>
+                    <section class="team-section">
+                                <div class="team-header">
+                                    <h2>Composition d'équipe (3 picks / rôle)</h2>
+                                    <div class="team-actions">
+                                        <button class="primary-btn big" type="button" onclick="randomTeam()">🎲 Générer l'équipe</button>
+                                    </div>
+                                </div>
+                        <div id="teamGrid" class="team-grid" aria-live="polite"></div>
+                    </section>
 
-<body>
-    <button class="btn" onclick="randomChampion()"> RANDOMIZE </button>
-    
-
-    <div class="gottenchamps">
-        <div class =champ1 id="champ1" hidden>
-            <h2 class="champ-pick" id="champPickElement1"></h2>
-            <button class="rerollbtn" onclick="reroll1()" hidden = "hidden", id = button1> Reroll</button>
-            
+            <footer class="app-footer">
+                <small>Mise à jour avec images Data Dragon. Non affilié à Riot Games.</small>
+            </footer>
         </div>
-        <div class =champ2 id="champ2" hidden>
-            <h2 class="champ-pick" id="champPickElement2"></h2>
-            <button class="rerollbtn" onclick="reroll2()" hidden = "hidden", id = button2> Reroll</button>
-        </div>
-        <div class =champ3 id="champ3" hidden>
-            <h2 class="champ-pick" id="champPickElement3"></h2>
-            <button class="rerollbtn" onclick="reroll3()" hidden = "hidden", id = button3> Reroll</button>
-        </div>
-
-        
-
-    </div>
-
-    <div class="selectgroup">
-
-        <select name="championRole" id="championRole">
-            <option value="top">TOP</option>
-            <option value="jungle">JUNGLE</option>
-            <option value="mid">MID</option>
-            <option value="adc">ADC</option>
-            <option value="support">SUPPORT</option>
-            <option value="general" selected>GENERAL</option>
-        </select>
-
-        <select name="champ_num" id="champ_num">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-    </div>
 
         <script src="app.js"></script>
-        
-</body>
-
+    </body>
 </html>
